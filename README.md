@@ -5,13 +5,13 @@ This tool extracts every frame of an animated Facebook sticker.
 1. Open a Messenager chat session and send your friend the animated sticker you'd like to extract.
 2. Right-click the sticker you just sent. Click "inspect" and you can see:
 
-![README-assets/background-url.png]()
+![Background Image URL](README-assets/background-url.png)
 
 3. Right-click on that highlighted URL, click "open".
 4. Right-click on the new-opened image, save it under your clone of this repository and name it "stickers.png"
 5. Open that image and take a look. For example:
 
-![README-assets/example-stickers.png]()
+![An example stickerset](README-assets/example-stickers.png)
 
 The format of this sticker is:
 
