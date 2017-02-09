@@ -4,6 +4,7 @@ from PIL import Image
 import os
 
 img = Image.open("trash_doves.png")
+img.thumbnail((576, 576))
 
 offset = 3
 cols = [4,4,4,3]
@@ -16,7 +17,7 @@ if not os.path.exists(outputDir):
 for index in range(len(cols)):
     for _ in range(cols[index]):
         count += 1
-        cropped = img.crop((_ * 160, index * 160 + offset, (_  + 1) * 160, (index + 1) * 160 + offset))
+        cropped = img.crop((12 + 144 * _, 12 + 144 * index, 144 * (_ + 1) - 12, 144 * (index + 1) - 12))
         (width, height) = cropped.size
         new = Image.new("RGBA", (width, height), (0, 0, 0, 0))
         new.paste(cropped)
