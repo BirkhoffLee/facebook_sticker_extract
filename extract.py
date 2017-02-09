@@ -4,6 +4,7 @@ import os
 from PIL import Image
 
 table = [4, 4, 4, 3]
+stickerPath = "./stickers.png"
 outputDirFull = "./output/full/"
 outputDirSticker = "./output/sticker/"
 outputDirCustom = "./output/custom/"
@@ -24,7 +25,7 @@ if not os.path.exists(outputDirCustom):
     os.makedirs(outputDirCustom)
 
 
-img = Image.open("trash_doves.png")
+img = Image.open(stickerPath)
 count = 0
 
 for colIndex, row in enumerate(table):
