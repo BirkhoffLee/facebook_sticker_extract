@@ -3,7 +3,7 @@
 import os
 from PIL import Image
 
-cols = [4, 4, 4, 3]
+table = [4, 4, 4, 3]
 outputDirFull = "./output/full/"
 outputDirSticker = "./output/sticker/"
 outputDirCustom = "./output/custom/"
@@ -27,13 +27,13 @@ if not os.path.exists(outputDirCustom):
 img = Image.open("trash_doves.png")
 count = 0
 
-for colIndex in enumerate(cols):
-    for rowIndex in range(cols[colIndex]):
+for colIndex, row in enumerate(table):
+    for rowIndex in range(row):
         count += 1
-        cropped = img.crop((sticker_offset + sticker_width * rowIndex,
-                            sticker_offset + sticker_height * colIndex,
-                            sticker_width * (rowIndex + 1) - sticker_offset,
-                            sticker_height * (colIndex + 1) - sticker_offset))
+        cropped = img.crop((sticker_offset   + sticker_width  *  rowIndex, # left
+                            sticker_offset   + sticker_height *  colIndex, # up
+                            - sticker_offset + sticker_width  * (rowIndex + 1), # right
+                            - sticker_offset + sticker_height * (colIndex + 1))) # down
 
         # Full-sized version
         cropped.save(outputDirFull + str(count) + ".png")
